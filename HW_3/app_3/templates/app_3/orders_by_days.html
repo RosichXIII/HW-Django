@@ -1,0 +1,38 @@
+{% extends "app_3/base.html" %}
+
+{% block title %}
+    Товары за n дней
+{% endblock %}
+
+{% block content %}
+    <center>
+        <h1>Все заказы/товары клиента - '{{ customer.name }}<br> за последние {{ count_day }} дней:</h1>
+        <h3>
+        {% for order in list_filter_orders %}
+            <table border='1'>
+                <tr>
+                    <th>Кол-во заказов</th>
+                    <th>Дата заказа</th>
+                    <th>Сумма заказа</th>
+                    <th>Перечень продуктов</th>
+                </tr>
+                <tr>
+                    <td>
+                        {{ order.pk }}
+                    </td>
+                    <td>
+                        {{ order.date_order }}
+                    </td>
+                    <td>
+                        {{ order.price_total_order }}
+                    </td>
+                    <td>
+                        {{ order.products }}
+                    </td>
+                </tr>
+            </table>
+            <br>
+        {% endfor %}
+        </h3>
+    </center>
+{% endblock %}
