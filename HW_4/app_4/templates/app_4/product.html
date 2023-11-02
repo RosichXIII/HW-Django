@@ -1,0 +1,15 @@
+{% extends 'app_4/base.html' %}
+
+{% block title %}
+    Товар
+{% endblock %}
+
+{% block content %}
+    <h1>Наименование: {{ product.product_name }}</h1>
+    <p>Описание: {{ product.product_description }}</p>
+    <p>Цена: {{ product.price }}</p>
+    <p>Количество: {{ product.product_quantity }}</p>
+    <p>Дата создания: {{ product.product_acceptance_date }}</p>
+    <br>
+    {{ product.product_img }}
+{% endblock %}

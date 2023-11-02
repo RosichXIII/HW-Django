@@ -1,0 +1,39 @@
+{% extends "app_4/base.html" %}
+
+{% block title %}
+    Все товары клиента
+{% endblock %}
+
+{% block content %}
+    <center>
+        <h1>Все товары клиента из всех заказов - '{{ customer.name }}:</h1>
+        <h3>
+        {% for order in orders %}
+            <table border='1'>
+                <tr>
+                    <th>Номер заказа</th>
+                    <th>Дата заказа</th>
+                    <th>Сумма заказа</th>
+                    <th>Перечень товаров</th>
+                </tr>
+                <tr>
+                    <td>
+                        {{ order.pk }}
+                    </td>
+                    <td>
+                        {{ order.date_order }}
+                    </td>
+                    <td>
+                        {{ order.price_total_order }}
+                    </td>
+
+                    <td>
+                        - Товар -
+                    </td>
+                </tr>
+            </table>
+            <br>
+        {% endfor %}
+        </h3>
+    </center>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "app_4/base.html" %}
+
+{% block title %}
+    Заказы клиента
+{% endblock %}
+
+{% block content %}
+    <h1>Заказы клиента {{ customer.name }}:</h1>
+
+    {% for order in orders %}
+        <h2>
+            <a href = "{% url 'order' order.id %}">{{ order.pk }}</a><br>
+        </h2>
+    {% endfor %}
+    
+{% endblock %}

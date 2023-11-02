@@ -1,0 +1,15 @@
+{% extends 'app_4/base.html' %}
+
+{% block title %}
+{% endblock %}
+
+
+{% block content %}
+    <h1>введите id клиента и кол-во дней: </h1>
+
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">выбрать</button>
+        </form>
+{% endblock %}
